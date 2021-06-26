@@ -3,7 +3,7 @@ package com.udacity.security.application;
 import com.udacity.security.data.Sensor;
 import com.udacity.security.data.SensorType;
 import com.udacity.security.service.SecurityService;
-import com.udacity.image.service.StyleService;
+import com.udacity.security.service.StyleService;
 import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;

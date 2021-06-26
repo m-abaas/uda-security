@@ -1,0 +1,8 @@
+package com.udacity.image.service;
+
+import java.awt.image.BufferedImage;
+
+public interface AwsImageServiceInterface {
+    public boolean imageContainsCat(BufferedImage image, float confidenceThreshhold);
+
+}
