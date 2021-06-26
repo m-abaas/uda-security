@@ -101,8 +101,12 @@ public class SecurityService {
             return; //no problem if the system is disarmed
         }
         switch(securityRepository.getAlarmStatus()) {
-            case NO_ALARM -> setAlarmStatus(AlarmStatus.PENDING_ALARM);
-            case PENDING_ALARM -> setAlarmStatus(AlarmStatus.ALARM);
+            case NO_ALARM:
+                setAlarmStatus(AlarmStatus.PENDING_ALARM);
+            case PENDING_ALARM:
+                setAlarmStatus(AlarmStatus.ALARM);
+            default:
+                ;
         }
     }
 
@@ -123,8 +127,8 @@ public class SecurityService {
        }
 
         if(allSensorsAreDeactivated) {
-            switch(securityRepository.getAlarmStatus()) {
-                case PENDING_ALARM -> setAlarmStatus(AlarmStatus.NO_ALARM);
+            if (securityRepository.getAlarmStatus() == AlarmStatus.PENDING_ALARM) {
+                setAlarmStatus(AlarmStatus.NO_ALARM);
             }
         }
     }
