@@ -5,5 +5,5 @@ module com.udacity.security {
     requires com.google.gson;
     requires com.miglayout.swing;
     requires com.udacity.image;
-    opens com.udacity.security.service;
+    opens com.udacity.security.service to com.udacity.image;
 }

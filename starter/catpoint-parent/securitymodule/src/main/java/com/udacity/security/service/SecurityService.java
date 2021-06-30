@@ -20,9 +20,9 @@ import java.util.Set;
  */
 public class SecurityService {
 
-    private FakeImageService imageService;
-    private SecurityRepository securityRepository;
-    private Set<StatusListener> statusListeners = new HashSet<>();
+    private final FakeImageService imageService;
+    private final SecurityRepository securityRepository;
+    private final Set<StatusListener> statusListeners = new HashSet<>();
 
     public SecurityService(SecurityRepository securityRepository, FakeImageService imageService) {
         this.securityRepository = securityRepository;
@@ -103,8 +103,10 @@ public class SecurityService {
         switch(securityRepository.getAlarmStatus()) {
             case NO_ALARM:
                 setAlarmStatus(AlarmStatus.PENDING_ALARM);
+                break;
             case PENDING_ALARM:
                 setAlarmStatus(AlarmStatus.ALARM);
+                break;
             default:
                 ;
         }
