@@ -69,7 +69,6 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -84,7 +83,7 @@
                             <manifest>
                                 <addClasspath>true</addClasspath>
                                 <classpathPrefix>lib/</classpathPrefix>
-                                <mainClass>com.udacity.packagesearch.search.Main</mainClass>
+                                <mainClass>com.udacity.security.application.CatpointApp</mainClass>
                             </manifest>
                         </archive>
                         <descriptorRefs>
@@ -102,7 +101,6 @@
                     </executions>
                 </plugin>
             </plugins>
-        </pluginManagement>
     </build>
 
 </project>
